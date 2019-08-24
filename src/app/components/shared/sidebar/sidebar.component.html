@@ -36,52 +36,52 @@
                             <div id="jquery-accordion-menu" class="jquery-accordion-menu">
                                 <div class="jquery-accordion-menu-header">PRINCIPALES</div>
                                 <ul>
-                                    <li routerLinkActive="active"><a href="#"><i class="fal fa-info-circle"></i>Inicio </a>
+                                    <li routerLinkActive="active"><a href="#"><i class="fas fa-home"></i> Inicio</a>
                                         <ul class="submenu">
                                             <li routerLinkActive="active"><a [routerLink]="['agenda']">Agenda </a></li>
                                             <li routerLinkActive="active"><a [routerLink]="['reportes']">Reportes </a><span class="jquery-accordion-menu-label">10 </span></li>
                                         </ul>
                                     </li>
                                     <div class="jquery-accordion-menu-header">AREA ADMINISTRACIÓN</div>
-                                    <li><a href="#"><i class="fa fa-glass"></i>Clientes </a></li>
-                                    <li><a href="#"><i class="fa fa-home"></i>Catalogo Lugares </a>
+                                    <li><a [routerLink]="['clientes']" ><i class="fa fa-home"></i>Clientes </a></li>
+                                    <li><a href="#" ><i class="fa fa-home"></i>Catalogo Lugares </a>
                                         <ul class="submenu">
-                                            <li><a href="#">Ceremonias </a></li>
-                                            <li><a href="#">Banquetes </a><span class="jquery-accordion-menu-label">10 </span></li>
+                                            <li><a [routerLink]="['ceremonias']">Ceremonias </a></li>
+                                            <li><a [routerLink]="['banquetes']">Banquetes </a><span class="jquery-accordion-menu-label">10 </span></li>
                         
                                         </ul>
                                     </li>
                                     <li><a href="#"><i class="fa fa-home"></i>Catalogo Tipos</a>
                                         <ul class="submenu">
-                                            <li><a href="#">Ceremonias </a></li>
-                                            <li><a href="#">Lugares </a><span class="jquery-accordion-menu-label">10 </span></li>
+                                            <li><a [routerLink]="['tipos-ceremonias']" >Ceremonias </a></li>
+                                            <li><a [routerLink]="['tipos-lugares']" >Lugares </a><span class="jquery-accordion-menu-label">10 </span></li>
                         
                                         </ul>
                                     </li>
                                     <li><a href="#"><i class="fa fa-home"></i>Miscelaneos bodas</a>
                                         <ul class="submenu">
-                                            <li><a href="#">Proveedores </a></li>
-                                            <li><a href="#">Servicios </a><span class="jquery-accordion-menu-label">10 </span></li>
-                                            <li><a href="#">Productos </a></li>
-                                            <li><a href="#">Agencias </a></li>
-                                            <li><a href="#">Paquetes </a></li>
-                                            <li><a href="#">Horarios </a></li>
+                                            <li><a  [routerLink]="['proveedores']" >Proveedores </a></li>
+                                            <li><a  [routerLink]="['servicios']" >Servicios </a><span class="jquery-accordion-menu-label">10 </span></li>
+                                            <li><a  [routerLink]="['productos']" >Productos </a></li>
+                                            <li><a  [routerLink]="['agencias']" >Agencias </a></li>
+                                            <li><a  [routerLink]="['paquetes']" >Paquetes </a></li>
+                                            <li><a  [routerLink]="['horarios']" >Horarios </a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#"><i class="fa fa-glass"></i>Comisiones </a></li>
-                                    <li><a href="#"><i class="fa fa-glass"></i>Usuarios </a></li>
-                                    <li><a href="#"><i class="fa fa-glass"></i>Masterfile </a></li>
+                                    <li><a [routerLink]="['comisiones']" ><i class="fa fa-home"></i>Comisiones </a></li>
+                                    <li><a [routerLink]="['usuarios']" ><i class="fa fa-home"></i>Usuarios </a></li>
+                                    <li><a [routerLink]="['masterfile']" ><i class="fa fa-home"></i>Masterfile </a></li>
                         
                                     <div class="jquery-accordion-menu-header">AREA CONFIGURACIÓN</div>
-                                    <li><a href="#"><i class="fa fa-glass"></i>Hoteles </a></li>
-                                    <li><a href="#"><i class="fa fa-home"></i>Catalogos</a>
+                                    <li><a [routerLink]="['hoteles']"><i class="fas fa-home"></i>Hoteles </a></li>
+                                    <li><a href="#" ><i class="fa fa-home"></i>Catalogos</a>
                                         <ul class="submenu">
-                                            <li><a href="#">Divisas </a></li>
-                                            <li><a href="#">Estadoss </a></li>
+                                            <li><a [routerLink]="['divisas']" >Divisas </a></li>
+                                            <li><a [routerLink]="['estados']" >Estados </a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#"><i class="fa fa-glass"></i>Parametros </a></li>
-                                    <li><a href="#"><i class="fa fa-glass"></i>Roles/permisos </a></li>
+                                    <li><a [routerLink]="['parametros']" ><i class="fa fa-home"></i>Parametros </a></li>
+                                    <li><a [routerLink]="['roles-permisos']" ><i class="fa fa-home"></i>Roles/permisos </a></li>
                                 </ul>
                             </div>
                         
