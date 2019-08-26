@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 // componentes repetitivos
 import { HeaderComponent } from './components/shared/header/header.component';
 import { SidebarComponent } from './components/shared/sidebar/sidebar.component';
-import { MainComponent } from './components/shared/main/main.component';
 import { ShortcutMenuComponent } from './components/shared/shortcut-menu/shortcut-menu.component';
 import { FooterComponent } from './components/shared/footer/footer.component';
 // import HomeComponent default
@@ -48,7 +47,6 @@ import { RUTAS } from './app.routes';
 // componentes shared
     HeaderComponent,
     SidebarComponent,
-    MainComponent,
     ShortcutMenuComponent,
     FooterComponent,
 // home component defaul

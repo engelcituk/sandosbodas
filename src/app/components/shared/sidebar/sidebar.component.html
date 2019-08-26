@@ -1,115 +1,135 @@
-<aside class="page-sidebar">
-    <div class="page-logo">
-        <a href="#" class="page-logo-link press-scale-down d-flex align-items-center position-relative" data-toggle="modal" data-target="#modal-shortcut">
-            <img src="./assets/libs/img/logo.png" alt="SmartAdmin WebApp" aria-roledescription="logo">
-            <span class="page-logo-text mr-1">SandosWeddings</span>
-            <span class="position-absolute text-white opacity-50 small pos-top pos-right mr-2 mt-n2"></span>
-            <!-- <i class="fal fa-angle-down d-inline-block ml-1 fs-lg color-primary-300"></i> -->
+<div class="sidebar" data-color="rose" data-background-color="black" data-image="./assets/libs/img/sidebar-1.jpg">                
+    <div class="logo">
+        <a href="http://www.creative-tim.com/" class="simple-text logo-mini">
+            SB
+        </a>
+        <a href="http://www.creative-tim.com/" class="simple-text logo-normal">
+            SandosBodas
         </a>
     </div>
-                    <!-- BEGIN PRIMARY NAVIGATION -->
-                    <nav id="js-primary-nav" class="primary-nav" role="navigation">
-                        <!-- <div class="nav-filter">
-                            <div class="position-relative">
-                                <input type="text" id="nav_filter_input" placeholder="Filter menu" class="form-control" tabindex="0">
-                                <a href="#" onclick="return false;" class="btn-primary btn-search-close js-waves-off" data-action="toggle" data-class="list-filter-active" data-target=".page-sidebar">
-                                    <i class="fal fa-chevron-up"></i>
-                                </a>
-                            </div>
-                        </div> -->
-                        <div class="info-card">
-                            <img src="./assets/libs/img/avatar-admin.png" class="profile-image rounded-circle" alt="Dr. Codex Lantern">
-                            <div class="info-card-text">
-                                <a href="#" class="d-flex align-items-center text-white">
-                                    <span class="text-truncate text-truncate-sm d-inline-block">
-                                        Dr. Codex Lantern
-                                    </span>
-                                </a>
-                                <span class="d-inline-block text-truncate text-truncate-sm">Toronto, Canada</span>
-                            </div>
-                            <img src="./assets/libs/img/wedding.png" class="cover" alt="cover">
-                            <!-- <a href="#" onclick="return false;" class="pull-trigger-btn" data-action="toggle" data-class="list-filter-active" data-target=".page-sidebar" data-focus="nav_filter_input">
-                                <i class="fal fa-angle-down"></i>
-                            </a> -->
-                        </div>    
-                        
-                            <div id="jquery-accordion-menu" class="jquery-accordion-menu">
-                                <div class="jquery-accordion-menu-header">PRINCIPALES</div>
-                                <ul>
-                                    <li routerLinkActive="active"><a href="#"><i class="fas fa-home"></i> Inicio</a>
-                                        <ul class="submenu">
-                                            <li routerLinkActive="active"><a [routerLink]="['agenda']">Agenda </a></li>
-                                            <li routerLinkActive="active"><a [routerLink]="['reportes']">Reportes </a><span class="jquery-accordion-menu-label">10 </span></li>
-                                        </ul>
-                                    </li>
-                                    <div class="jquery-accordion-menu-header">AREA ADMINISTRACIÓN</div>
-                                    <li><a [routerLink]="['clientes']" ><i class="fa fa-home"></i>Clientes </a></li>
-                                    <li><a href="#" ><i class="fa fa-home"></i>Catalogo Lugares </a>
-                                        <ul class="submenu">
-                                            <li><a [routerLink]="['ceremonias']">Ceremonias </a></li>
-                                            <li><a [routerLink]="['banquetes']">Banquetes </a><span class="jquery-accordion-menu-label">10 </span></li>
-                        
-                                        </ul>
-                                    </li>
-                                    <li><a href="#"><i class="fa fa-home"></i>Catalogo Tipos</a>
-                                        <ul class="submenu">
-                                            <li><a [routerLink]="['tipos-ceremonias']" >Ceremonias </a></li>
-                                            <li><a [routerLink]="['tipos-lugares']" >Lugares </a><span class="jquery-accordion-menu-label">10 </span></li>
-                        
-                                        </ul>
-                                    </li>
-                                    <li><a href="#"><i class="fa fa-home"></i>Miscelaneos bodas</a>
-                                        <ul class="submenu">
-                                            <li><a  [routerLink]="['proveedores']" >Proveedores </a></li>
-                                            <li><a  [routerLink]="['servicios']" >Servicios </a><span class="jquery-accordion-menu-label">10 </span></li>
-                                            <li><a  [routerLink]="['productos']" >Productos </a></li>
-                                            <li><a  [routerLink]="['agencias']" >Agencias </a></li>
-                                            <li><a  [routerLink]="['paquetes']" >Paquetes </a></li>
-                                            <li><a  [routerLink]="['horarios']" >Horarios </a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a [routerLink]="['comisiones']" ><i class="fa fa-home"></i>Comisiones </a></li>
-                                    <li><a [routerLink]="['usuarios']" ><i class="fa fa-home"></i>Usuarios </a></li>
-                                    <li><a [routerLink]="['masterfile']" ><i class="fa fa-home"></i>Masterfile </a></li>
-                        
-                                    <div class="jquery-accordion-menu-header">AREA CONFIGURACIÓN</div>
-                                    <li><a [routerLink]="['hoteles']"><i class="fas fa-home"></i>Hoteles </a></li>
-                                    <li><a href="#" ><i class="fa fa-home"></i>Catalogos</a>
-                                        <ul class="submenu">
-                                            <li><a [routerLink]="['divisas']" >Divisas </a></li>
-                                            <li><a [routerLink]="['estados']" >Estados </a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a [routerLink]="['parametros']" ><i class="fa fa-home"></i>Parametros </a></li>
-                                    <li><a [routerLink]="['roles-permisos']" ><i class="fa fa-home"></i>Roles/permisos </a></li>
-                                </ul>
-                            </div>
-                        
-                        <div class="filter-message js-filter-message bg-success-600"></div>
-                    </nav>
-                    <!-- END PRIMARY NAVIGATION -->
-                    <!-- NAV FOOTER -->
-                    <div class="nav-footer shadow-top">
-                        <a href="#" onclick="return false;" data-action="toggle" data-class="nav-function-minify" class="hidden-md-down">
-                            <i class="ni ni-chevron-right"></i>
-                            <i class="ni ni-chevron-right"></i>
-                        </a>
-                        <ul class="list-table m-auto nav-footer-buttons">
-                            <li>
-                                <a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Chat logs">
-                                    <i class="fal fa-comments"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Support Chat">
-                                    <i class="fal fa-life-ring"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" data-toggle="tooltip" data-placement="top" title="Make a call">
-                                    <i class="fal fa-phone"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div> <!-- END NAV FOOTER -->
-                </aside>
+    <div class="sidebar-wrapper">
+        <div class="user">
+            <div class="photo">
+                <img src="./assets/libs/img/avatar.jpg" />
+                  
+
+            </div>
+            <div class="user-info">
+                <a data-toggle="collapse" href="#collapseExample" class="username">
+                    <span>
+                        Agent Andrew
+                        <b class="caret"></b>
+                    </span>
+                </a>
+                <div class="collapse" id="collapseExample">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span class="sidebar-mini"> MP </span>
+                                <span class="sidebar-normal"> My Profile </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span class="sidebar-mini"> EP </span>
+                                <span class="sidebar-normal"> Edit Profile </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span class="sidebar-mini"> S </span>
+                                <span class="sidebar-normal"> Settings </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <ul class="nav">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['home']">
+                    <i class="fas fa-home"></i>
+                    <p> Inicio </p>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" data-toggle="collapse" href="#pageHome">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <p> Dasboard
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="pageHome">
+                    <ul class="nav">
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" [routerLink]="['agenda']">
+                                <span class="sidebar-mini"> AG </span>
+                                <span class="sidebar-normal"> Agenda </span>
+                            </a>
+                        </li>
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" [routerLink]="['reportes']">
+                                <span class="sidebar-mini"> RE </span>
+                                <span class="sidebar-normal"> Reportes </span>
+                            </a>
+                        </li>                       
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['clientes']">
+                    <i class="fas fa-heart"></i>
+                    <p> Clientes </p>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" data-toggle="collapse" href="#pageLugares">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p> Catalogo lugares
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="pageLugares">
+                    <ul class="nav">
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" [routerLink]="['ceremonias']">
+                                <span class="sidebar-mini"> CE </span>
+                                <span class="sidebar-normal"> Ceremonias </span>
+                            </a>
+                        </li>
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" [routerLink]="['banquetes']">
+                                <span class="sidebar-mini"> BA </span>
+                                <span class="sidebar-normal"> Banquetes </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" data-toggle="collapse" href="#pageTipos">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p> Catalogo Tipos
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="pageTipos">
+                    <ul class="nav">
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" [routerLink]="['tipos-ceremonias']">
+                                <span class="sidebar-mini"> CE </span>
+                                <span class="sidebar-normal"> Ceremonias </span>
+                            </a>
+                        </li>
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" [routerLink]="['tipos-lugares']">
+                                <span class="sidebar-mini"> BA </span>
+                                <span class="sidebar-normal"> Lugares </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
