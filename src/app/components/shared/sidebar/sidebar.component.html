@@ -45,13 +45,13 @@
                 </div>
             </div>
         </div>
-        <ul class="nav">
+        <ul class="nav">            
             <li class="nav-item" routerLinkActive="active">
                 <a class="nav-link" [routerLink]="['home']">
                     <i class="fas fa-home"></i>
                     <p> Inicio </p>
                 </a>
-            </li>
+            </li>            
             <li class="nav-item" routerLinkActive="active">
                 <a class="nav-link" data-toggle="collapse" href="#pageHome">
                     <i class="fas fa-tachometer-alt"></i>
@@ -76,6 +76,7 @@
                     </ul>
                 </div>
             </li>
+            <br>
             <li class="nav-item" routerLinkActive="active">
                 <a class="nav-link" [routerLink]="['clientes']">
                     <i class="fas fa-heart"></i>
@@ -84,7 +85,7 @@
             </li>
             <li class="nav-item" routerLinkActive="active">
                 <a class="nav-link" data-toggle="collapse" href="#pageLugares">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-map-marker-check"></i>
                     <p> Catalogo lugares
                         <b class="caret"></b>
                     </p>
@@ -108,7 +109,7 @@
             </li>
             <li class="nav-item" routerLinkActive="active">
                 <a class="nav-link" data-toggle="collapse" href="#pageTipos">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-bars"></i>
                     <p> Catalogo Tipos
                         <b class="caret"></b>
                     </p>
@@ -123,12 +124,121 @@
                         </li>
                         <li class="nav-item" routerLinkActive="active">
                             <a class="nav-link" [routerLink]="['tipos-lugares']">
-                                <span class="sidebar-mini"> BA </span>
+                                <span class="sidebar-mini"> LU </span>
                                 <span class="sidebar-normal"> Lugares </span>
                             </a>
                         </li>
                     </ul>
                 </div>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" data-toggle="collapse" href="#pageBodas">
+                    <i class="fas fa-rings-wedding"></i>
+                    <p> Miscelaneos bodas
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="pageBodas">
+                    <ul class="nav">
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" [routerLink]="['proveedores']">
+                                <span class="sidebar-mini"> PR </span>
+                                <span class="sidebar-normal"> Proveedores </span>
+                            </a>
+                        </li>
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" [routerLink]="['servicios']">
+                                <span class="sidebar-mini"> SE </span>
+                                <span class="sidebar-normal"> Servicios </span>
+                            </a>
+                        </li>
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" [routerLink]="['productos']">
+                                <span class="sidebar-mini"> PR </span>
+                                <span class="sidebar-normal"> Productos </span>
+                            </a>
+                        </li>
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" [routerLink]="['agencias']">
+                                <span class="sidebar-mini"> AG </span>
+                                <span class="sidebar-normal"> Agencias </span>
+                            </a>
+                        </li>
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" [routerLink]="['paquetes']">
+                                <span class="sidebar-mini"> PA </span>
+                                <span class="sidebar-normal"> Paquetes </span>
+                            </a>
+                        </li>
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" [routerLink]="['horarios']">
+                                <span class="sidebar-mini"> HO </span>
+                                <span class="sidebar-normal"> horarios </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['comisiones']">
+                    <i class="fas fa-money-check"></i>
+                    <p> Comisiones </p>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['usuarios']">
+                    <i class="fas fa-user-chart"></i>
+                    <p> Usuarios </p>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['masterfile']">
+                    <i class="fas fa-file-pdf"></i>
+                    <p> Masterfile </p>
+                </a>
+            </li>
+            <br>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['hoteles']">
+                    <i class="fas fa-hotel"></i>
+                    <p> Hoteles </p>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" data-toggle="collapse" href="#pageCatSettings">
+                    <i class="fas fa-bars"></i>
+                    <p> Catalogo
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="pageCatSettings">
+                    <ul class="nav">
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" [routerLink]="['divisas']">
+                                <span class="sidebar-mini"> DI </span>
+                                <span class="sidebar-normal"> Divisas </span>
+                            </a>
+                        </li>
+                        <li class="nav-item" routerLinkActive="active">
+                            <a class="nav-link" [routerLink]="['estados']">
+                                <span class="sidebar-mini"> ES </span>
+                                <span class="sidebar-normal"> EStados </span>
+                            </a>
+                        </li>                        
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['parametros']">
+                    <i class="fas fa-cogs"></i>
+                    <p> Parametros </p>
+                </a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['roles-permisos']">
+                    <i class="fas fa-key"></i>
+                    <p> Roles/permisos </p>
+                </a>
             </li>
         </ul>
     </div>
