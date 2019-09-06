@@ -1,8 +1,6 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
+import { HomeComponent } from './pages/dashboard/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
-import { RegistroComponent } from './pages/registro/registro.component';
-
 // dashboard components
 import { AgendaComponent } from './pages/dashboard/agenda/agenda.component';
 import { ReportesComponent } from './pages/dashboard/reportes/reportes.component';
@@ -32,7 +30,6 @@ import { RolesPermisosComponent } from './pages/configuracion/roles-permisos/rol
 export const RUTAS: Routes = [
     // rutas auth
     { path: 'login', component: LoginComponent },
-    { path: 'registro', component: RegistroComponent },
     // rutas principales
     { path: 'home', component: HomeComponent },
     { path: 'agenda', component: AgendaComponent },

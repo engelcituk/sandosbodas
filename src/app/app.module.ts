@@ -6,13 +6,15 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 // componentes repetitivos
 import { HeaderComponent } from './pages/shared/header/header.component';
+import { HeaderloginComponent } from './pages/shared/headerlogin/headerlogin.component';
+
+
 import { SidebarComponent } from './pages/shared/sidebar/sidebar.component';
 import { ShortcutMenuComponent } from './pages/shared/shortcut-menu/shortcut-menu.component';
 import { FooterComponent } from './pages/shared/footer/footer.component';
 // import HomeComponent default
-import { HomeComponent } from './pages/home/home.component';
+import { HomeComponent } from './pages/dashboard/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
-import { RegistroComponent } from './pages/registro/registro.component';
 
 // import componentes dashboard
 import { AgendaComponent } from './pages/dashboard/agenda/agenda.component';
@@ -41,24 +43,26 @@ import { RolesPermisosComponent } from './pages/configuracion/roles-permisos/rol
 
 // importacion de rutas
 import { RUTAS } from './app.routes';
+import { FullcalendarComponent } from './pages/shared/fullcalendar/fullcalendar.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-// componentes shared
+    // componentes shared
     HeaderComponent,
+    HeaderloginComponent,
     SidebarComponent,
     ShortcutMenuComponent,
     FooterComponent,
-// home component defaul
+    // home component defaul
     HomeComponent,
     LoginComponent,
-    RegistroComponent,
-// dashboard component
+    // dashboard component
     AgendaComponent,
     ReportesComponent,
-// admininistration components
+    // admininistration components
     ClientesComponent,
     CeremoniasComponent,
     BanquetesComponent,
@@ -74,11 +78,12 @@ import { RUTAS } from './app.routes';
     ComisionesComponent,
     UsuariosComponent,
     MasterfileComponent,
-// settings components
+    // settings components
     HotelesComponent,
     DivisasComponent,
     EstadosComponent,
     ParametrosComponent,
+    FullcalendarComponent,
 
   ],
   imports: [
