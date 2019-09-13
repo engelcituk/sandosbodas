@@ -10,12 +10,10 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-12">
-                                
+                                <full-calendar defaultView="dayGridMonth" [plugins]="calendarPlugins" (dateClick)="handleDateClick($event)"></full-calendar>
                             </div>
                         </div>                        
-                        <h3>Manage Listings</h3>
-                        <br>
-                        
+                                                
                     </div>
                 </div>
             </div>

@@ -3,6 +3,7 @@ import * as $ from 'jquery';
 import 'fullcalendar';
 import '../../../../../node_modules/fullcalendar/dist/locale/es';
 
+
 import * as moment from 'moment';
 
 @Component({

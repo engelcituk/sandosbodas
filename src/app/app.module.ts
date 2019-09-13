@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
@@ -19,6 +21,7 @@ import { LoginComponent } from './pages/login/login.component';
 // import componentes dashboard
 import { AgendaComponent } from './pages/dashboard/agenda/agenda.component';
 import { ReportesComponent } from './pages/dashboard/reportes/reportes.component';
+import { EventoComponent } from './pages/dashboard/evento/evento.component';
 // import componentes area administracion
 import { ClientesComponent } from './pages/administracion/clientes/clientes.component';
 import { CeremoniasComponent } from './pages/administracion/ceremonias/ceremonias.component';
@@ -44,6 +47,8 @@ import { RolesPermisosComponent } from './pages/configuracion/roles-permisos/rol
 // importacion de rutas
 import { RUTAS } from './app.routes';
 import { FullcalendarComponent } from './pages/shared/fullcalendar/fullcalendar.component';
+import { DataTablesModule } from 'angular-datatables'; // datatables
+import { FullCalendarModule } from '@fullcalendar/angular'; // for FullCalendar!
 
 
 
@@ -62,6 +67,7 @@ import { FullcalendarComponent } from './pages/shared/fullcalendar/fullcalendar.
     // dashboard component
     AgendaComponent,
     ReportesComponent,
+    EventoComponent,
     // admininistration components
     ClientesComponent,
     CeremoniasComponent,
@@ -87,7 +93,11 @@ import { FullcalendarComponent } from './pages/shared/fullcalendar/fullcalendar.
 
   ],
   imports: [
-    BrowserModule,
+  BrowserModule,
+    DataTablesModule, // for datatables!
+    FullCalendarModule, // for FullCalendar!
+    FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(RUTAS, { useHash: true })
   ],
   providers: [],

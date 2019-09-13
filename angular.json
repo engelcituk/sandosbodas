@@ -18,16 +18,23 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": false, 
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"              
+              "src/styles.css",
+              "src/assets/css/cssGoogle.css",       
+              "src/assets/css/material-dashboard.minf066.css",
+              "src/assets/demo/demo.css",
+              "src/assets/css/all-5-8-2.min.css",        
+              "node_modules/datatables.net-dt/css/jquery.dataTables.css"
             ],
             "scripts": [
-              
+              "node_modules/moment/min/moment.min.js",
+              "node_modules/fullcalendar/dist/fullcalendar.min.js",                                 
+              "node_modules/datatables.net/js/jquery.dataTables.js"              
             ]
           },
           "configurations": {

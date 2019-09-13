@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataTablesModule } from 'angular-datatables';
+
 
 @Component({
   selector: 'app-usuarios',

@@ -3,6 +3,7 @@ import { HomeComponent } from './pages/dashboard/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 // dashboard components
 import { AgendaComponent } from './pages/dashboard/agenda/agenda.component';
+import { EventoComponent } from './pages/dashboard/evento/evento.component';
 import { ReportesComponent } from './pages/dashboard/reportes/reportes.component';
 // administration components
 // import componentes area administracion
@@ -33,6 +34,7 @@ export const RUTAS: Routes = [
     // rutas principales
     { path: 'home', component: HomeComponent },
     { path: 'agenda', component: AgendaComponent },
+    { path: 'agenda/:id/:fecha', component: EventoComponent },
     { path: 'reportes', component: ReportesComponent },
     // rutas area de administración
     { path: 'clientes', component: ClientesComponent },
