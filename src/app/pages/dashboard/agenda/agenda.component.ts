@@ -3,6 +3,9 @@ import { EventoModel } from '../../../models/evento.model';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
 import { EventosService } from './../../../services/eventos.service';
+import { Observable } from 'rxjs';
+import { NgForm } from '@angular/forms';
+
 
 import Swal from 'sweetalert2';
 
@@ -16,6 +19,8 @@ export class AgendaComponent implements OnInit {
   // evento = new EventoModel();
   fecha: any;
   eventos: EventoModel[] = [];
+  evento: EventoModel = new EventoModel();
+
   cargando = false;
   private mdlSampleIsOpen;
 
@@ -24,10 +29,10 @@ export class AgendaComponent implements OnInit {
   ngOnInit() {
     this.cargando = true;
     this.cargarCalendario();
-    this.eventoService.getEventos().subscribe( respuesta => {
-      this.eventos = respuesta;
-      this.cargando = false;
-    });
+    this.eventoService.getEventos().subscribe(respuesta => {
+        this.eventos = respuesta;
+        this.cargando = false;
+      });
   }
   cargarCalendario() {
     setTimeout(() => {
@@ -58,7 +63,9 @@ export class AgendaComponent implements OnInit {
   diaClick(date, fecha) {
     if (moment().format('YYYY-MM-DD') === date.format('YYYY-MM-DD') || date.isAfter(moment())) {
       // This allows today and future date
-        this.router.navigateByUrl(`/agenda/nuevo/${fecha}`);
+        // this.router.navigateByUrl(`/agenda/nuevo/${fecha}`);
+      this.evento.fechaEvento = fecha;
+      this.openModal(true);
     } else {
       // Else part is for past dates
       console.log('no puedes crear eventos para dias pasados a hoy');
@@ -80,8 +87,60 @@ export class AgendaComponent implements OnInit {
       }
     });
   }
+  openModalEditar(evento: EventoModel) {
+    const id = evento.id;
+    this.eventoService.getEvento(evento.id, evento.fechaEvento).subscribe((respuesta: EventoModel) => {
+      this.evento = respuesta;
+      this.evento.id = id;
+    });
+    this.openModal(true);
+  }
   private openModal(open: boolean): void {
     this.mdlSampleIsOpen = open;
+  }
+  guardarEvento(form: NgForm) {
+
+    // console.log(form);
+    // console.log(this.evento);
+    if (form.invalid) {
+      console.log('formulario invalido');
+      return;
+    }
+    Swal.fire({
+      title: 'Espere',
+      text: 'Guardando información',
+      type: 'info',
+      allowOutsideClick: false
+    });
+    Swal.showLoading();
+
+    let peticion: Observable<any>;
+
+
+    if (this.evento.id) { // si tiene id el evento lo edito
+      peticion = this.eventoService.actualizarEvento(this.evento);
+    } else {
+      this.evento.start = this.evento.fechaEvento + 'T' + this.getHour();
+      peticion = this.eventoService.crearEvento(this.evento);
+    }
+
+    peticion.subscribe(respuesta => {
+      Swal.fire({
+        title: this.evento.title,
+        text: 'Se actualizó correctamente',
+        type: 'success'
+      });
+
+    });
+  }
+  getHour() {
+    const date = new Date();
+    const segundos = date.getSeconds();
+    const minutos = date.getMinutes();
+    const hora = date.getHours();
+
+    return hora + ':' + minutos + ':' + segundos;
+
   }
 }
 
