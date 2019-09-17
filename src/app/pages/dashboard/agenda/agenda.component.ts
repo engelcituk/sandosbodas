@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { EventoModel } from '../../../models/evento.model';
 import { Router } from '@angular/router';
 import * as moment from 'moment';
-import { EventosService } from './../../../services/eventos.service';
 import { Observable } from 'rxjs';
 import { NgForm } from '@angular/forms';
+import '../../../../../node_modules/fullcalendar/dist/locale/es';
 
 
+import { EventosService } from './../../../services/eventos.service';
+import { EventoModel } from '../../../models/evento.model';
+import * as $ from 'jquery';
 import Swal from 'sweetalert2';
+import 'fullcalendar';
 
 
 @Component({
@@ -18,7 +21,7 @@ import Swal from 'sweetalert2';
 export class AgendaComponent implements OnInit {
   // evento = new EventoModel();
   fecha: any;
-  eventos: EventoModel[] = []; 
+  eventos: EventoModel[] = [];
   evento: EventoModel = new EventoModel();
 
   cargando = false;

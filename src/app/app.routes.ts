@@ -1,4 +1,5 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+
 import { HomeComponent } from './pages/dashboard/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 // dashboard components
@@ -29,7 +30,7 @@ import { RolesPermisosComponent } from './pages/configuracion/roles-permisos/rol
 import { PagesComponent } from './pages/pages.component';
 import { NoPageFoundComponent } from './pages/shared/no-page-found/no-page-found.component';
 
-export const RUTAS: Routes = [
+const appRoutes: Routes = [
     // rutas auth
     {path: 'login', component: LoginComponent },
     // rutas principales
@@ -70,3 +71,4 @@ export const RUTAS: Routes = [
 
 ];
 
+export const APP_ROUTES = RouterModule.forRoot(appRoutes, { useHash: true });
