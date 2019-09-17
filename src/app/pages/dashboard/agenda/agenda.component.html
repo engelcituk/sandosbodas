@@ -1,148 +1,129 @@
-<body class="">
-    <div class="wrapper">
-        <app-sidebar></app-sidebar>
-        <div class="main-panel">
-            <!-- Navbar -->
-            <app-header></app-header>
-            <!-- End Navbar -->
-            <div class="content">
-                <div class="container-fluid">
-                                       
-                    <!-- Modal -->
-                    <div class="modal fade" id="modalEVento" role="dialog" 
-                        [ngStyle]="{'display': mdlSampleIsOpen ? 'block' : 'none', 'opacity': 1}">
-                        <div class="modal-dialog modal-dialog-centered" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="modalEVentoLabel"> Evento</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="openModal(false)">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <form (ngSubmit)="guardarEvento(form)" #form="ngForm">
-                                <div class="modal-body">
-                    
-                                        <div class="form-group">
-                                            <!-- <label class="bmd-label-floating"> ID</label> -->
-                                            <input type="text" class="form-control" disabled [(ngModel)]="evento.id" name="id">
-                                            <small>Este campo Id es autogenerado</small>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="bmd-label-floating">Color</label>
-                                            <input type="text" class="form-control" disabled [(ngModel)]="evento.color" name="color">
-                                            <small>Este campo tiene valor default</small>
-                                        </div>
-                                        <div class="form-group">
-                                            <!-- <label class="bmd-label-floating">Fecha evento</label> -->
-                                            <input type="text" class="form-control" disabled [(ngModel)]="evento.fechaEvento"
-                                                name="fechaEvento">
-                                            <small>Fecha seleccionada del calendario</small>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="bmd-label-floating"> titulo evento</label>
-                                            <input type="text" class="form-control" [(ngModel)]="evento.title" name="title" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="bmd-label-floating"> Nombre parejas</label>
-                                            <input type="text" class="form-control" [(ngModel)]="evento.nombrePareja" name="nombrePareja"
-                                                required>
-                                        </div>
-                    
-                    
-                                    </div>
-                                    <div class="modal-footer">
-                                        <!-- <button type="button" class="btn btn-warning mr-left" data-dismiss="modal"
-                                            (click)="openModal(false)">Close</button>
-                                            <button type="button" class="btn btn-primary">Save changes</button> -->
-                                            
-                                            <button type="button" class="btn btn-warning" (click)="openModal(false)"> <i class="fas fa-undo"> </i> Salir</button>
-                                            
-                                            <button type="submit" class="btn btn-primary"> <i class="fas fa-save"></i> Registrar</button>
-                                            
-                                        </div>
-                                    </form>
-                            </div>
+
+<div class="row">
+    <div class="modal fade" id="modalEVento" role="dialog"
+        [ngStyle]="{'display': mdlSampleIsOpen ? 'block' : 'none', 'opacity': 1}">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalEVentoLabel"> Evento</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="openModal(false)">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form (ngSubmit)="guardarEvento(form)" #form="ngForm">
+                    <div class="modal-body">
+    
+                        <div class="form-group">
+                            <!-- <label class="bmd-label-floating"> ID</label> -->
+                            <input type="text" class="form-control" disabled [(ngModel)]="evento.id" name="id">
+                            <small>Este campo Id es autogenerado</small>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 ml-auto mr-auto">
-                            <div class="card card-calendar">
-                                <div class="card-body ">
-                                    <div id="calendar"></div>
-                                </div>
-                                
-                            </div>                            
+                        <div class="form-group">
+                            <label class="bmd-label-floating">Color</label>
+                            <input type="text" class="form-control" disabled [(ngModel)]="evento.color" name="color">
+                            <small>Este campo tiene valor default</small>
                         </div>
+                        <div class="form-group">
+                            <!-- <label class="bmd-label-floating">Fecha evento</label> -->
+                            <input type="text" class="form-control" disabled [(ngModel)]="evento.fechaEvento"
+                                name="fechaEvento">
+                            <small>Fecha seleccionada del calendario</small>
+                        </div>
+                        <div class="form-group">
+                            <label class="bmd-label-floating"> titulo evento</label>
+                            <input type="text" class="form-control" [(ngModel)]="evento.title" name="title" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="bmd-label-floating"> Nombre parejas</label>
+                            <input type="text" class="form-control" [(ngModel)]="evento.nombrePareja" name="nombrePareja"
+                                required>
+                        </div>
+    
+    
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="card" *ngIf="!cargando && eventos.length > 0">
-                                <div class="card-header card-header-rose card-header-icon">
-                                    <div class="card-icon">
-                                        <i class="material-icons">assignment</i>
-                                    </div>
-                                    <h4 class="card-title">Lista de eventos</h4>
-                                </div>
-                                <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th class="text-center">#</th>
-                                                    <th>Evento</th>
-                                                    <th>Fecha evento</th>
-                                                    <th>Nombre Pareja</th>                                                    
-                                                    <th class="text-right">Acciones</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr *ngFor="let evento of eventos, let i = index">
-                                                    <td class="text-center">{{i+1}}</td>
-                                                    <td>{{evento.title}}</td>                                                    
-                                                    <td>{{evento.start}}</td>
-                                                    <td>{{evento.nombrePareja}}</td>
-                                                    <td class="td-actions text-right">  
-                                                        <button type="button" rel="tooltip" class="btn btn-info btn-lg mr-1"
-                                                         (click)="openModalEditar(evento)" 
-                                                        >
-                                                            <i class="fas fa-edit"></i>
-                                                        </button>
-                                                        <button type="button"
-                                                            (click)="deleteEvento(evento, i)"
-                                                            rel="tooltip"
-                                                            class="btn btn-danger btn-lg">
-                                                            <i class="fas fa-trash-alt"></i>
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                              
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                            <div *ngIf="!cargando && eventos.length === 0" class="well text-center mt-3 animated fadeIn faster">
-                                <h4 class="alert-heading">No hay eventos</h4>
-                                <p>
-                                    <i class="fas fa-exclamation-circle fa-2x"></i>                                    
-                                </p>
-                            </div>
-                            <div *ngIf="cargando" class="alert alert-info text-center mt-3 animated fadeIn faster">
-                                <h4 class="alert-heading">Cargando</h4>
-                                <p>
-                                    <i class="fa fa-sync-alt fa-spin fa-2x"></i>
-                                </p>
-                                <p class="mb-0">
-                                    Espere por favor
-                                </p>
-                            </div>
-                            <!-- Button trigger modal -->                            
-                        </div>                                                        
+                    <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-warning mr-left" data-dismiss="modal"
+                                                (click)="openModal(false)">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button> -->
+    
+                        <button type="button" class="btn btn-warning" (click)="openModal(false)"> <i class="fas fa-undo">
+                            </i> Salir</button>
+    
+                        <button type="submit" class="btn btn-primary"> <i class="fas fa-save"></i> Registrar</button>
+    
                     </div>
-                </div>                
+                </form>
             </div>
-            <!-- <app-footer></app-footer> -->
         </div>
     </div>
-</body>
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div id="calendar"></div>                
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="card" *ngIf="!cargando && eventos.length > 0">
+            <div class="card-header card-header-rose card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">assignment</i>
+                </div>
+                <h4 class="card-title">Lista de eventos</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="text-center">#</th>
+                                <th>Evento</th>
+                                <th>Fecha evento</th>
+                                <th>Nombre Pareja</th>
+                                <th class="text-right">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let evento of eventos, let i = index">
+                                <td class="text-center">{{i+1}}</td>
+                                <td>{{evento.title}}</td>
+                                <td>{{evento.start}}</td>
+                                <td>{{evento.nombrePareja}}</td>
+                                <td class="td-actions text-right">
+                                    <button type="button" rel="tooltip" class="btn btn-info btn-lg mr-1"
+                                        (click)="openModalEditar(evento)">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button type="button" (click)="deleteEvento(evento, i)" rel="tooltip"
+                                        class="btn btn-danger btn-lg">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <div *ngIf="!cargando && eventos.length === 0" class="well text-center mt-3 animated fadeIn faster">
+            <h4 class="alert-heading">No hay eventos</h4>
+            <p>
+                <i class="fas fa-exclamation-circle fa-2x"></i>
+            </p>
+        </div>
+        <div *ngIf="cargando" class="alert alert-info text-center mt-3 animated fadeIn faster">
+            <h4 class="alert-heading">Cargando</h4>
+            <p>
+                <i class="fa fa-sync-alt fa-spin fa-2x"></i>
+            </p>
+            <p class="mb-0">
+                Espere por favor
+            </p>
+        </div>
+        <!-- Button trigger modal -->
+    </div>
+</div>

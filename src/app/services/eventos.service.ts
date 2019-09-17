@@ -12,7 +12,7 @@ export class EventosService {
   private url = 'https://login-app-88906.firebaseio.com/';
 
   constructor(private http: HttpClient) { }
-  
+
   // metodo para crear el evento
   crearEvento(evento: EventoModel) {
 

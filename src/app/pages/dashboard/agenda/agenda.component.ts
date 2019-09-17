@@ -18,7 +18,7 @@ import Swal from 'sweetalert2';
 export class AgendaComponent implements OnInit {
   // evento = new EventoModel();
   fecha: any;
-  eventos: EventoModel[] = [];
+  eventos: EventoModel[] = []; 
   evento: EventoModel = new EventoModel();
 
   cargando = false;

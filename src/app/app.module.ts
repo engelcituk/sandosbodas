@@ -21,7 +21,7 @@ import { LoginComponent } from './pages/login/login.component';
 // import componentes dashboard
 import { AgendaComponent } from './pages/dashboard/agenda/agenda.component';
 import { ReportesComponent } from './pages/dashboard/reportes/reportes.component';
-import { EventoComponent } from './pages/dashboard/evento/evento.component';
+
 // import componentes area administracion
 import { ClientesComponent } from './pages/administracion/clientes/clientes.component';
 import { CeremoniasComponent } from './pages/administracion/ceremonias/ceremonias.component';
@@ -48,7 +48,10 @@ import { RolesPermisosComponent } from './pages/configuracion/roles-permisos/rol
 import { RUTAS } from './app.routes';
 import { FullcalendarComponent } from './pages/shared/fullcalendar/fullcalendar.component';
 import { DataTablesModule } from 'angular-datatables'; // datatables
-import { FullCalendarModule } from '@fullcalendar/angular'; // for FullCalendar!
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { PagesComponent } from './pages/pages.component';
+import { BreadcrumbsComponent } from './pages/shared/breadcrumbs/breadcrumbs.component';
+import { NoPageFoundComponent } from './pages/shared/no-page-found/no-page-found.component'; // for FullCalendar!
 
 
 
@@ -67,7 +70,6 @@ import { FullCalendarModule } from '@fullcalendar/angular'; // for FullCalendar!
     // dashboard component
     AgendaComponent,
     ReportesComponent,
-    EventoComponent,
     // admininistration components
     ClientesComponent,
     CeremoniasComponent,
@@ -90,6 +92,9 @@ import { FullCalendarModule } from '@fullcalendar/angular'; // for FullCalendar!
     EstadosComponent,
     ParametrosComponent,
     FullcalendarComponent,
+    PagesComponent,
+    BreadcrumbsComponent,
+    NoPageFoundComponent,
 
   ],
   imports: [
