@@ -7,6 +7,7 @@ import { AgendaComponent } from './pages/dashboard/agenda/agenda.component';
 import { ReportesComponent } from './pages/dashboard/reportes/reportes.component';
 // administration components
 // import componentes area administracion
+
 import { ClientesComponent } from './pages/administracion/clientes/clientes.component';
 import { CeremoniasComponent } from './pages/administracion/ceremonias/ceremonias.component';
 import { BanquetesComponent } from './pages/administracion/banquetes/banquetes.component';
@@ -21,19 +22,25 @@ import { HorariosComponent } from './pages/administracion/horarios/horarios.comp
 import { ComisionesComponent } from './pages/administracion/comisiones/comisiones.component';
 import { UsuariosComponent } from './pages/administracion/usuarios/usuarios.component';
 import { MasterfileComponent } from './pages/administracion/masterfile/masterfile.component';
+
 // administration components
+
 import { HotelesComponent } from './pages/configuracion/hoteles/hoteles.component';
 import { DivisasComponent } from './pages/configuracion/divisas/divisas.component';
 import { EstadosComponent } from './pages/configuracion/estados/estados.component';
 import { ParametrosComponent } from './pages/configuracion/parametros/parametros.component';
 import { RolesPermisosComponent } from './pages/configuracion/roles-permisos/roles-permisos.component';
+
+
 import { PagesComponent } from './pages/pages.component';
 import { NoPageFoundComponent } from './pages/shared/no-page-found/no-page-found.component';
 
 const appRoutes: Routes = [
     // rutas auth
     {path: 'login', component: LoginComponent },
+
     // rutas principales
+
     {
         path: '',
         component: PagesComponent,
@@ -41,9 +48,13 @@ const appRoutes: Routes = [
             { path: 'home', component: HomeComponent },
             { path: 'agenda', component: AgendaComponent },
             { path: 'reportes', component: ReportesComponent },
+
             // default route
+
             { path: '', pathMatch: 'full', redirectTo: 'agenda' },
+
             // rutas area de administración
+
             { path: 'clientes', component: ClientesComponent },
             { path: 'ceremonias', component: CeremoniasComponent },
             { path: 'banquetes', component: BanquetesComponent },
@@ -58,7 +69,9 @@ const appRoutes: Routes = [
             { path: 'comisiones', component: ComisionesComponent },
             { path: 'usuarios', component: UsuariosComponent },
             { path: 'masterfile', component: MasterfileComponent },
+
             // rutas area de configuracion
+
             { path: 'hoteles', component: HotelesComponent },
             { path: 'divisas', component: DivisasComponent },
             { path: 'estados', component: EstadosComponent },
